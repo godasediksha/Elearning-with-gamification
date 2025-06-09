@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Phonics Fun | A to Z</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      background: #fef6e4;
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #4a90e2;
+        color: #000;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+        transition: background 0.3s ease;
+        z-index: 999;
+    }
+    .back-btn:hover {
+        background-color: #4a90e2;
+    }
+    
+
+    .letter {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ff5e62;
+    }
+
+    .word {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff3e0;
+      color: #444;
+      font-size: 14px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px 10px;
+      }
+
+      .letter {
+        font-size: 36px;
+      }
+
+      .word {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <a href="cources.html" class="back-btn">← Back</a>
+
+  <header>
+    <h1>🔤 Phonics Fun – A to Z</h1>
+    <p>Tap a letter to hear how it sounds!</p>
+  </header>
+
+  <div class="grid" id="phonicsGrid">
+    <!-- Alphabet cards will be injected here -->
+  </div>
+
+  <footer>
+    © 2025 Phonics Fun | Designed with ❤️ for early learners
+  </footer>
+
+  <script>
+    const phonicsData = {
+      A: "Apple",
+      B: "Ball",
+      C: "Cat",
+      D: "Dog",
+      E: "Elephant",
+      F: "Fish",
+      G: "Goat",
+      H: "Hat",
+      I: "Ice Cream",
+      J: "Jug",
+      K: "Kite",
+      L: "Lion",
+      M: "Monkey",
+      N: "Nest",
+      O: "Orange",
+      P: "Parrot",
+      Q: "Queen",
+      R: "Rabbit",
+      S: "Sun",
+      T: "Tiger",
+      U: "Umbrella",
+      V: "Van",
+      W: "Watch",
+      X: "Xylophone",
+      Y: "Yak",
+      Z: "Zebra"
+    };
+
+    const grid = document.getElementById("phonicsGrid");
+
+    for (let letter in phonicsData) {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="letter">${letter}</div>
+        <div class="word">${letter} for ${phonicsData[letter]}</div>
+      `;
+      card.onclick = () => {
+        const speech = new SpeechSynthesisUtterance(`${letter} for ${phonicsData[letter]}`);
+        speech.lang = 'en-US';
+        speech.rate = 0.9;
+        speech.pitch = 1.1;
+        speechSynthesis.speak(speech);
+      };
+      grid.appendChild(card);
+    }
+  </script>
+
+</body>
+</html>

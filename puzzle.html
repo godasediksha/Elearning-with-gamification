@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Puzzle - Math Adventures</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .top-bar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .back-btn {
+            background-color: #1f3c88;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #4a90e2;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            color: #ffcc00;
+        }
+
+        .puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .puzzle-piece {
+            width: 80px;
+            height: 80px;
+            background: white;
+            color: #1f3c88;
+            font-size: 2em;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: grab;
+            transition: 0.3s;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .puzzle-piece:hover {
+            transform: scale(1.1);
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            background: #ff9800;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .buttons button:hover {
+            background: #e68a00;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: lime;
+        }
+
+        .stats {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <div class="top-bar">
+        <a href="advenmath.html" class="back-btn">← Back</a>
+    </div>
+    
+    <div class="container">
+        <h2>🧩 Number Puzzle Game</h2>
+        <p>Drag the numbers to arrange them in ascending order!</p>
+
+        <div class="stats">
+            ⏳ Time: <span id="timer">0</span> sec | 🔢 Moves: <span id="moves">0</span>
+        </div>
+        
+        <div class="puzzle-container" id="puzzleContainer">
+            <!-- Puzzle pieces will be inserted dynamically -->
+        </div>
+
+        <div class="buttons">
+            <button onclick="shufflePuzzle()">🔀 Shuffle</button>
+            <button onclick="checkOrder()">✅ Check</button>
+            <button onclick="hint()">💡 Hint</button>
+            <button onclick="restartGame()">🔄 Reset</button>
+        </div>
+
+        <p class="message" id="message"></p>
+    </div>
+
+    <script>
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let moves = 0, time = 0, timerInterval;
+        const puzzleContainer = document.getElementById("puzzleContainer");
+
+        function createPuzzle() {
+            puzzleContainer.innerHTML = "";
+            let shuffledNumbers = [...numbers].sort(() => Math.random() - 0.5);
+            shuffledNumbers.forEach(num => {
+                let div = document.createElement("div");
+                div.classList.add("puzzle-piece");
+                div.textContent = num;
+                div.draggable = true;
+                div.addEventListener("dragstart", dragStart);
+                div.addEventListener("dragover", dragOver);
+                div.addEventListener("drop", drop);
+                puzzleContainer.appendChild(div);
+            });
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            time = 0;
+            timerInterval = setInterval(() => {
+                time++;
+                document.getElementById("timer").textContent = time;
+            }, 1000);
+        }
+
+        function dragStart(event) {
+            event.dataTransfer.setData("text/plain", event.target.textContent);
+            event.target.classList.add("dragging");
+        }
+
+        function dragOver(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const draggingElement = document.querySelector(".dragging");
+            const targetElement = event.target;
+            [draggingElement.textContent, targetElement.textContent] = [targetElement.textContent, draggingElement.textContent];
+            draggingElement.classList.remove("dragging");
+            moves++;
+            document.getElementById("moves").textContent = moves;
+        }
+
+        function checkOrder() {
+            let pieces = document.querySelectorAll(".puzzle-piece");
+            let currentOrder = Array.from(pieces).map(piece => Number(piece.textContent));
+            if (JSON.stringify(currentOrder) === JSON.stringify(numbers)) {
+                clearInterval(timerInterval);
+                document.getElementById("message").textContent = `🎉 You won in ${time} sec and ${moves} moves!`;
+                confettiEffect();
+            } else {
+                document.getElementById("message").textContent = "❌ Not yet! Keep trying.";
+            }
+        }
+
+        function shufflePuzzle() {
+            createPuzzle();
+            document.getElementById("message").textContent = "";
+            document.getElementById("moves").textContent = "0";
+            moves = 0;
+            startTimer();
+        }
+
+        function restartGame() {
+            shufflePuzzle();
+            time = 0;
+            document.getElementById("timer").textContent = "0";
+        }
+
+        function hint() {
+            alert("Tip: Start by placing the smallest numbers first!");
+        }
+
+        function confettiEffect() {
+            let confettiSettings = { target: 'my-canvas' };
+            let confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+        }
+
+        window.onload = () => {
+            createPuzzle();
+            startTimer();
+        };
+    </script>
+
+    <canvas id="my-canvas"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
+</body>
+</html>

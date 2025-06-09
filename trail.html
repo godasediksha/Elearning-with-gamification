@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achievements | EduQuest</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      min-height: 100vh;
+      padding: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+
+    .achievement {
+      display: flex;
+      align-items: center;
+      background: #f7f9fc;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .achievement:hover {
+      transform: scale(1.01);
+    }
+
+    .achievement-icon {
+      font-size: 50px;
+      color: #f39c12;
+      margin-right: 25px;
+    }
+
+    .achievement-info {
+      flex-grow: 1;
+    }
+
+    .achievement-info h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #34495e;
+    }
+
+    .achievement-info p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #2ecc71;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      .achievement {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .achievement-icon {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">Achievements</div>
+
+    <div class="achievement">
+      <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+      <div class="achievement-info">
+        <h3>Quiz Master</h3>
+        <p>Completed 10 quizzes with 90% accuracy or more.</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="achievement">
+      <div class="achievement-icon"><i class="fas fa-fire"></i></div>
+      <div class="achievement-info">
+        <h3>Learning Streak</h3>
+        <p>Logged in daily for 7 consecutive days.</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="achievement">
+      <div class="achievement-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div class="achievement-info">
+        <h3>Course Champ</h3>
+        <p>Completed your first full course successfully.</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 100%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="achievement">
+      <div class="achievement-icon"><i class="fas fa-star"></i></div>
+      <div class="achievement-info">
+        <h3>Star Student</h3>
+        <p>Earned 5 stars from teacher evaluations.</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 50%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">&copy; 2025 EduQuest. All Rights Reserved.</div>
+  </div>
+</body>
+</html>

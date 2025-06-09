@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | Students | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      background: #f4f7fa;
+    }
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #2c3e50;
+      color: white;
+      padding-top: 30px;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #34495e;
+    }
+
+    .main {
+      margin-left: 220px;
+      padding: 40px;
+      width: 100%;
+    }
+
+    .main h1 {
+      font-size: 26px;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .students-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .students-table th, .students-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .students-table th {
+      background-color: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    .students-table tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .btn {
+      padding: 6px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 13px;
+      color: white;
+      transition: 0.2s;
+    }
+
+    .view-btn {
+      background-color: #3498db;
+    }
+
+    .remove-btn {
+      background-color: #e74c3c;
+    }
+
+    .btn:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>EduQuest</h2>
+    <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="#"><i class="fas fa-users"></i> Students</a>
+    <a href="teacher.html"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+    <a href="courcesadmin.html"><i class="fas fa-book"></i> Courses</a>
+    <a href="assingadmin.html"><i class="fas fa-tasks"></i> Assignments</a>
+    <a href="settingsadmin.html"><i class="fas fa-cog"></i> Settings</a>
+    <a href="stafflogin.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>👩‍🎓 Manage Students</h1>
+    <table class="students-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Class</th>
+          <th>Email</th>
+          <th>Progress</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reshma Bhosale</td>
+          <td>5th Grade</td>
+          <td>riya@example.com</td>
+          <td>85%</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>Usha Bhosale</td>
+          <td>6th Grade</td>
+          <td>arjun@example.com</td>
+          <td>78%</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>Diksha Godase</td>
+          <td>4th Grade</td>
+          <td>simran@example.com</td>
+          <td>92%</td>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <td>Pranil Sawant</td>
+          <td>7th Grade</td>
+          <td>yash@example.com</td>
+          <td>70%</td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics Master | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #1f3c88;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: #4a90e2;
+    }
+
+    .exam-container {
+      width: 80%;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .question {
+      font-size: 18px;
+      color: white;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .question-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .question-number {
+      font-weight: bold;
+      margin-right: 15px;
+    }
+
+    .options-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .option-btn {
+      background: #f5f5f5;
+      color: #333;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      width: 150px;
+      transition: background 0.3s;
+    }
+
+    .option-btn:hover {
+      background: #e1e1e1;
+    }
+
+    .submit-btn {
+      background: #747574;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: #7a7c7a;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #333;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+<body>
+
+    <a href="cources.html" class="back-btn">← Back</a>
+
+
+  <header>
+    <h1>Physics Master | EduQuest</h1>
+    <p>Test your Physics knowledge! Answer the following questions.</p>
+  </header>
+
+  <div class="exam-container">
+    <form id="exam-form">
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">1.</div>
+          <p> What is the unit of force?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q1-a" name="q1" value="Newton"><label for="q1-a" class="option-btn">Newton</label>
+          <input type="radio" id="q1-b" name="q1" value="Joule"><label for="q1-b" class="option-btn">Joule</label>
+          <input type="radio" id="q1-c" name="q1" value="Pascal"><label for="q1-c" class="option-btn">Pascal</label>
+          <input type="radio" id="q1-d" name="q1" value="Ampere"><label for="q1-d" class="option-btn">Ampere</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">2.</div>
+          <p> What is the speed of light in a vacuum?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q2-a" name="q2" value="3 x 10^8 m/s"><label for="q2-a" class="option-btn">3 x 10^8 m/s</label>
+          <input type="radio" id="q2-b" name="q2" value="3 x 10^6 m/s"><label for="q2-b" class="option-btn">3 x 10^6 m/s</label>
+          <input type="radio" id="q2-c" name="q2" value="3 x 10^5 m/s"><label for="q2-c" class="option-btn">3 x 10^5 m/s</label>
+          <input type="radio" id="q2-d" name="q2" value="3 x 10^4 m/s"><label for="q2-d" class="option-btn">3 x 10^4 m/s</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">3.</div>
+          <p> What is the formula to calculate the kinetic energy?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q3-a" name="q3" value="KE = 1/2 mv^2"><label for="q3-a" class="option-btn">KE = 1/2 mv^2</label>
+          <input type="radio" id="q3-b" name="q3" value="KE = mv^2"><label for="q3-b" class="option-btn">KE = mv^2</label>
+          <input type="radio" id="q3-c" name="q3" value="KE = mgh"><label for="q3-c" class="option-btn">KE = mgh</label>
+          <input type="radio" id="q3-d" name="q3" value="KE = 1/2 mgh"><label for="q3-d" class="option-btn">KE = 1/2 mgh</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">4.</div>
+          <p> What is the value of gravitational acceleration on Earth?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q4-a" name="q4" value="9.8 m/s²"><label for="q4-a" class="option-btn">9.8 m/s²</label>
+          <input type="radio" id="q4-b" name="q4" value="10 m/s²"><label for="q4-b" class="option-btn">10 m/s²</label>
+          <input type="radio" id="q4-c" name="q4" value="8.9 m/s²"><label for="q4-c" class="option-btn">8.9 m/s²</label>
+          <input type="radio" id="q4-d" name="q4" value="11 m/s²"><label for="q4-d" class="option-btn">11 m/s²</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">5.</div>
+          <p> Which of the following is a non-renewable energy source?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q5-a" name="q5" value="Solar Energy"><label for="q5-a" class="option-btn">Solar Energy</label>
+          <input type="radio" id="q5-b" name="q5" value="Wind Energy"><label for="q5-b" class="option-btn">Wind Energy</label>
+          <input type="radio" id="q5-c" name="q5" value="Coal"><label for="q5-c" class="option-btn">Coal</label>
+          <input type="radio" id="q5-d" name="q5" value="Geothermal Energy"><label for="q5-d" class="option-btn">Geothermal Energy</label>
+        </div>
+      </div>
+
+      <!-- Additional Questions -->
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">6.</div>
+          <p> What is the SI unit of power?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q6-a" name="q6" value="Watt"><label for="q6-a" class="option-btn">Watt</label>
+          <input type="radio" id="q6-b" name="q6" value="Joule"><label for="q6-b" class="option-btn">Joule</label>
+          <input type="radio" id="q6-c" name="q6" value="Newton"><label for="q6-c" class="option-btn">Newton</label>
+          <input type="radio" id="q6-d" name="q6" value="Pascal"><label for="q6-d" class="option-btn">Pascal</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">7.</div>
+          <p> What is the energy stored in an object due to its position called?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q7-a" name="q7" value="Potential Energy"><label for="q7-a" class="option-btn">Potential Energy</label>
+          <input type="radio" id="q7-b" name="q7" value="Kinetic Energy"><label for="q7-b" class="option-btn">Kinetic Energy</label>
+          <input type="radio" id="q7-c" name="q7" value="Heat Energy"><label for="q7-c" class="option-btn">Heat Energy</label>
+          <input type="radio" id="q7-d" name="q7" value="Chemical Energy"><label for="q7-d" class="option-btn">Chemical Energy</label>
+        </div>
+      </div>
+
+      <!-- More Questions -->
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">8.</div>
+          <p> Which of the following is a conductor of electricity?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q8-a" name="q8" value="Rubber"><label for="q8-a" class="option-btn">Rubber</label>
+          <input type="radio" id="q8-b" name="q8" value="Copper"><label for="q8-b" class="option-btn">Copper</label>
+          <input type="radio" id="q8-c" name="q8" value="Wood"><label for="q8-c" class="option-btn">Wood</label>
+          <input type="radio" id="q8-d" name="q8" value="Plastic"><label for="q8-d" class="option-btn">Plastic</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">9.</div>
+          <p> What is the main source of energy for the Earth?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q9-a" name="q9" value="The Sun"><label for="q9-a" class="option-btn">The Sun</label>
+          <input type="radio" id="q9-b" name="q9" value="The Moon"><label for="q9-b" class="option-btn">The Moon</label>
+          <input type="radio" id="q9-c" name="q9" value="Wind"><label for="q9-c" class="option-btn">Wind</label>
+          <input type="radio" id="q9-d" name="q9" value="Water"><label for="q9-d" class="option-btn">Water</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 EduQuest. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const correctAnswers = {
+      q1: "Newton",
+      q2: "3 x 10^8 m/s",
+      q3: "KE = 1/2 mv^2",
+      q4: "9.8 m/s²",
+      q5: "Coal",
+      q6: "Watt",
+      q7: "Potential Energy",
+      q8: "Copper",
+      q9: "The Sun"
+    };
+
+    function submitQuiz(event) {
+      event.preventDefault();
+
+      let score = 0;
+      const formElements = document.getElementById("exam-form").elements;
+
+      for (const question in correctAnswers) {
+        const selectedOption = formElements[question].value;
+        if (selectedOption === correctAnswers[question]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").innerHTML = `Your score: ${score} out of 9`;
+    }
+
+    document.getElementById("exam-form").addEventListener("submit", submitQuiz);
+  </script>
+</body>
+</html>

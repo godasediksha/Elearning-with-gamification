@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | Assignments | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      background: #f4f7fa;
+    }
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #2c3e50;
+      color: white;
+      padding-top: 30px;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #34495e;
+    }
+
+    .main {
+      margin-left: 220px;
+      padding: 40px;
+      width: 100%;
+    }
+
+    .main h1 {
+      font-size: 26px;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .assignments-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .assignments-table th, .assignments-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .assignments-table th {
+      background-color: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    .assignments-table tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .add-assignment-btn {
+      background-color: #2ecc71;
+      padding: 12px 20px;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 16px;
+      margin-bottom: 20px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .add-assignment-btn:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>EduQuest</h2>
+    <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="student.html"><i class="fas fa-users"></i> Students</a>
+    <a href="teacher.html"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+    <a href="courcesadmin.html"><i class="fas fa-book"></i> Courses</a>
+    <a href="#"><i class="fas fa-tasks"></i> Assignments</a>
+    <a href="settingsadmin.html"><i class="fas fa-cog"></i> Settings</a>
+    <a href="stafflogin.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>📚 Manage Assignments</h1>
+    <table class="assignments-table">
+      <thead>
+        <tr>
+          <th>Assignment Name</th>
+          <th>Course</th>
+          <th>Due Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Water Cycle Poster</td>
+          <td>Science</td>
+          <td>April 25, 2025</td>
+          <td>In Progress</td>
+        </tr>
+        <tr>
+          <td>Fraction Worksheet</td>
+          <td>Math</td>
+          <td>April 28, 2025</td>
+          <td>Assigned</td>
+        </tr>
+        <tr>
+          <td>Ancient Civilizations Report</td>
+          <td>History</td>
+          <td>May 2, 2025</td>
+          <td>Assigned</td>
+        </tr>
+        <tr>
+          <td>Essay on Shakespeare</td>
+          <td>English</td>
+          <td>May 5, 2025</td>
+          <td>Assigned</td>
+        </tr>
+        <tr>
+          <td>Newton's Laws of Motion</td>
+          <td>Physics</td>
+          <td>May 10, 2025</td>
+          <td>In Progress</td>
+        </tr>
+        <tr>
+          <td>Photosynthesis Experiment</td>
+          <td>Biology</td>
+          <td>May 15, 2025</td>
+          <td>Assigned</td>
+        </tr>
+        <tr>
+          <td>Geography Map Project</td>
+          <td>Geography</td>
+          <td>May 20, 2025</td>
+          <td>Assigned</td>
+        </tr>
+        <tr>
+          <td>Art Gallery Presentation</td>
+          <td>Art</td>
+          <td>May 25, 2025</td>
+          <td>Assigned</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

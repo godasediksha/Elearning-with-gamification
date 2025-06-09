@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Balloon Pop 🎈</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #0f0c29;  /* Single smooth gradient background */
+            overflow: hidden;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Move footer to the bottom */
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #1f3c88;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #4a90e2;
+        }
+
+        .question-box {
+            font-size: 24px;
+            font-weight: bold;
+            background: rgb(0, 0, 0);
+            padding: 10px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .footer {
+            margin-top: auto; /* Push the footer to the bottom */
+            padding: 10px;
+            font-size: 18px;
+            color: white;
+            background-color: #24243e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back Button -->
+    <a href="advenmath.html" class="back-btn">← Back</a>
+    
+    <h1>🎈 Math Balloon Pop 🎈</h1>
+    <p class="question-box" id="question">Loading...</p>
+    <div class="score">Score: <span id="score">0</span></div>
+    
+    <div class="game-container" id="game-container"></div>
+
+    <div class="footer">
+        <p>Footer content goes here</p>
+    </div>
+
+    <script>
+        const gameContainer = document.getElementById("game-container");
+        const questionBox = document.getElementById("question");
+        const scoreDisplay = document.getElementById("score");
+
+        let currentAnswer;
+        let score = 0;
+
+        function generateQuestion() {
+            let num1 = Math.floor(Math.random() * 10) + 1;
+            let num2 = Math.floor(Math.random() * 10) + 1;
+            currentAnswer = num1 + num2;
+            questionBox.innerText = `What is ${num1} + ${num2}?`;
+
+            generateBalloons();
+        }
+
+        function generateBalloons() {
+            gameContainer.innerHTML = "";
+            let correctPosition = Math.floor(Math.random() * 6);
+
+            for (let i = 0; i < 6; i++) {
+                let balloon = document.createElement("div");
+                balloon.classList.add("balloon");
+                balloon.style.left = Math.random() * 80 + "vw";
+                balloon.style.bottom = "-100px";
+
+                let value = i === correctPosition ? currentAnswer : Math.floor(Math.random() * 20) + 1;
+                balloon.innerText = value;
+
+                balloon.onclick = () => checkAnswer(value, balloon);
+                
+                gameContainer.appendChild(balloon);
+                moveBalloon(balloon);
+            }
+        }
+
+        function moveBalloon(balloon) {
+            let position = 0;
+            let speed = Math.random() * 1.5 + 0.5; // Slower speed
+
+            function move() {
+                if (position < 500) {
+                    position += speed;
+                    balloon.style.bottom = position + "px";
+                    requestAnimationFrame(move);
+                } else {
+                    position = -100; // Restart from the bottom if missed
+                    move();
+                }
+            }
+            move();
+        }
+
+        function checkAnswer(value, balloon) {
+            if (value === currentAnswer) {
+                score++;
+                scoreDisplay.innerText = score;
+                balloon.remove();
+                generateQuestion();
+            } else {
+                balloon.style.background = "gray";
+            }
+        }
+
+        generateQuestion();
+    </script>
+
+</body>
+</html>

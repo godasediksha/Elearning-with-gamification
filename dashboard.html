@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background: #f4f7fa;
+    }
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #2c3e50;
+      color: white;
+      padding-top: 30px;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #34495e;
+    }
+
+    .main {
+      margin-left: 220px;
+      padding: 40px;
+      width: 100%;
+    }
+
+    .main h1 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      color: #34495e;
+    }
+
+    .card p {
+      font-size: 26px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #3498db;
+    }
+
+    .recent-activity {
+      margin-top: 40px;
+    }
+
+    .recent-activity h2 {
+      font-size: 22px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .activity-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .activity-table th, .activity-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .activity-table th {
+      background: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    .activity-table tr:hover {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>EduQuest</h2>
+    <a href="student.html"><i class="fas fa-users"></i> Students</a>
+    <a href="teacher.html"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+    <a href="courcesadmin.html"><i class="fas fa-book"></i> Courses</a>
+    <a href="assingadmin.html"><i class="fas fa-tasks"></i> Assignments</a>
+    <a href="settingsadmin.html"><i class="fas fa-cog"></i> Settings</a>
+    <a href="stafflogin.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>📊 Admin Dashboard</h1>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Total Students</h3>
+        <p>120</p>
+      </div>
+      <div class="card">
+        <h3>Teachers</h3>
+        <p>18</p>
+      </div>
+      <div class="card">
+        <h3>Courses</h3>
+        <p>24</p>
+      </div>
+      <div class="card">
+        <h3>Assignments</h3>
+        <p>48</p>
+      </div>
+    </div>
+
+    <div class="recent-activity">
+      <h2>🕒 Recent Activity</h2>
+      <table class="activity-table">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Action</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Reshma Bhosale</td>
+            <td>Submitted Math Assignment</td>
+            <td>5 mins ago</td>
+          </tr>
+          <tr>
+            <td>Usha bhosale</td>
+            <td>Joined Course: Science</td>
+            <td>15 mins ago</td>
+          </tr>
+          <tr>
+            <td>Diksha Godase</td>
+            <td>Updated Profile</td>
+            <td>30 mins ago</td>
+          </tr>
+          <tr>
+            <td>Teacher Mr. Das</td>
+            <td>Assigned New Physics Task</td>
+            <td>1 hour ago</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

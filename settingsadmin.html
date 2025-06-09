@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | Settings | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      background: #f4f7fa;
+    }
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #2c3e50;
+      color: white;
+      padding-top: 30px;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #34495e;
+    }
+
+    .main {
+      margin-left: 220px;
+      padding: 40px;
+      width: 100%;
+    }
+
+    .main h1 {
+      font-size: 26px;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .settings-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .settings-form h2 {
+      font-size: 24px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #27ae60;
+    }
+
+    .form-group input[type="password"] {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>EduQuest</h2>
+    <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="student.html"><i class="fas fa-users"></i> Students</a>
+    <a href="teacher.html"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+    <a href="courcesadmin.html"><i class="fas fa-book"></i> Courses</a>
+    <a href="assingadmin.html"><i class="fas fa-tasks"></i> Assignments</a>
+    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    <a href="stafflogin.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>⚙️ Settings</h1>
+    <div class="settings-form">
+      <h2>Update Your Details</h2>
+      <form action="update-settings.html" method="POST">
+        
+        <!-- Change Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Change Password -->
+        <div class="form-group">
+          <label for="password">New Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter new password" required>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your new password" required>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-group">
+          <input type="submit" value="Update Settings">
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>

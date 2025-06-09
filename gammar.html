@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grammar Quiz | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #1f3c88;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: #4a90e2;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f9fcff;
+      margin-bottom: 30px;
+    }
+
+    .question {
+        margin-bottom: 25px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #dcdcdc;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+    }
+  
+    .question h3 {
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .options label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #2980b9;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #27ae60;
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <a href="cources.html" class="back-btn">← Back</a>
+
+  <div class="container">
+    <h1>📝 Grammar Quiz for 5th & 6th</h1>
+
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. Which sentence is in the past tense?</h3>
+        <div class="options">
+          <label><input type="radio" name="q1" value="a"> She is eating an apple.</label>
+          <label><input type="radio" name="q1" value="b"> She ate an apple.</label>
+          <label><input type="radio" name="q1" value="c"> She eats an apple.</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>2. Which word is a noun?</h3>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a"> Run</label>
+          <label><input type="radio" name="q2" value="b"> Happiness</label>
+          <label><input type="radio" name="q2" value="c"> Quickly</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>3. Which is a correct pronoun?</h3>
+        <div class="options">
+          <label><input type="radio" name="q3" value="a"> Car</label>
+          <label><input type="radio" name="q3" value="b"> He</label>
+          <label><input type="radio" name="q3" value="c"> Fast</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>4. Choose the correct sentence:</h3>
+        <div class="options">
+          <label><input type="radio" name="q4" value="a"> She go to school every day.</label>
+          <label><input type="radio" name="q4" value="b"> She goes to school every day.</label>
+          <label><input type="radio" name="q4" value="c"> She going to school every day.</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>5. Which is an adjective?</h3>
+        <div class="options">
+          <label><input type="radio" name="q5" value="a"> Blue</label>
+          <label><input type="radio" name="q5" value="b"> Swim</label>
+          <label><input type="radio" name="q5" value="c"> Slowly</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>6. Select the sentence with a helping verb:</h3>
+        <div class="options">
+          <label><input type="radio" name="q6" value="a"> He writing a letter.</label>
+          <label><input type="radio" name="q6" value="b"> He is writing a letter.</label>
+          <label><input type="radio" name="q6" value="c"> He write a letter.</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>7. Choose the correct article: "I saw ___ elephant at the zoo."</h3>
+        <div class="options">
+          <label><input type="radio" name="q7" value="a"> a</label>
+          <label><input type="radio" name="q7" value="b"> an</label>
+          <label><input type="radio" name="q7" value="c"> the</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>8. Identify the preposition: "The cat is under the table."</h3>
+        <div class="options">
+          <label><input type="radio" name="q8" value="a"> cat</label>
+          <label><input type="radio" name="q8" value="b"> under</label>
+          <label><input type="radio" name="q8" value="c"> table</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>9. Which word is a conjunction?</h3>
+        <div class="options">
+          <label><input type="radio" name="q9" value="a"> and</label>
+          <label><input type="radio" name="q9" value="b"> fast</label>
+          <label><input type="radio" name="q9" value="c"> boy</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>10. Which word is an interjection?</h3>
+        <div class="options">
+          <label><input type="radio" name="q10" value="a"> Wow!</label>
+          <label><input type="radio" name="q10" value="b"> Run</label>
+          <label><input type="radio" name="q10" value="c"> She</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>11. Which sentence is correct?</h3>
+        <div class="options">
+          <label><input type="radio" name="q11" value="a"> The dogs barks loudly.</label>
+          <label><input type="radio" name="q11" value="b"> The dogs bark loudly.</label>
+          <label><input type="radio" name="q11" value="c"> The dog bark loudly.</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>12. What type of sentence is this: "Wow! That’s amazing!"</h3>
+        <div class="options">
+          <label><input type="radio" name="q12" value="a"> Declarative</label>
+          <label><input type="radio" name="q12" value="b"> Interrogative</label>
+          <label><input type="radio" name="q12" value="c"> Exclamatory</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>13. Choose the sentence with correct punctuation:</h3>
+        <div class="options">
+          <label><input type="radio" name="q13" value="a"> What time is it</label>
+          <label><input type="radio" name="q13" value="b"> What time is it?</label>
+          <label><input type="radio" name="q13" value="c"> what time is it?</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>14. What is the passive voice of: "She writes a letter"?</h3>
+        <div class="options">
+          <label><input type="radio" name="q14" value="a"> A letter is written by her.</label>
+          <label><input type="radio" name="q14" value="b"> A letter was write by her.</label>
+          <label><input type="radio" name="q14" value="c"> A letter writes by her.</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>15. What is the synonym of “Happy”?</h3>
+        <div class="options">
+          <label><input type="radio" name="q15" value="a"> Sad</label>
+          <label><input type="radio" name="q15" value="b"> Joyful</label>
+          <label><input type="radio" name="q15" value="c"> Angry</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>16. What is the antonym of “Fast”?</h3>
+        <div class="options">
+          <label><input type="radio" name="q16" value="a"> Quick</label>
+          <label><input type="radio" name="q16" value="b"> Slow</label>
+          <label><input type="radio" name="q16" value="c"> Run</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>17. Which is an adverb?</h3>
+        <div class="options">
+          <label><input type="radio" name="q17" value="a"> Quickly</label>
+          <label><input type="radio" name="q17" value="b"> Quick</label>
+          <label><input type="radio" name="q17" value="c"> Speed</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>18. Choose the correct verb form: "He ___ to school daily."</h3>
+        <div class="options">
+          <label><input type="radio" name="q18" value="a"> go</label>
+          <label><input type="radio" name="q18" value="b"> going</label>
+          <label><input type="radio" name="q18" value="c"> goes</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>19. Pick the correct question tag: "You are coming, ___?"</h3>
+        <div class="options">
+          <label><input type="radio" name="q19" value="a"> aren’t you</label>
+          <label><input type="radio" name="q19" value="b"> are you</label>
+          <label><input type="radio" name="q19" value="c"> didn’t you</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>20. What part of speech is the word “beautiful”?</h3>
+        <div class="options">
+          <label><input type="radio" name="q20" value="a"> Verb</label>
+          <label><input type="radio" name="q20" value="b"> Adjective</label>
+          <label><input type="radio" name="q20" value="c"> Noun</label>
+        </div>
+      </div>
+
+      <button type="button" class="submit-btn" onclick="checkAnswers()">Submit</button>
+      <div class="result" id="result"></div>
+    </form>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "b", q2: "b", q3: "b", q4: "b", q5: "a",
+        q6: "b", q7: "b", q8: "b", q9: "a", q10: "a",
+        q11: "b", q12: "c", q13: "b", q14: "a", q15: "b",
+        q16: "b", q17: "a", q18: "c", q19: "a", q20: "b"
+      };
+
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let key in answers) {
+        const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+        if (userAnswer && userAnswer.value === answers[key]) {
+          score++;
+        }
+      }
+
+      const resultText = `🎉 You got ${score} out of ${total} correct!`;
+      document.getElementById("result").textContent = resultText;
+    }
+  </script>
+
+</body>
+</html>

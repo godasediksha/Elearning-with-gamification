@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learnify - Gamified E-Learning</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('images/3rd.png') no-repeat center center/cover;
+            color: white;
+        }
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            text-align: center;
+        }
+        .navbar {
+            position: absolute;
+            top: 20px;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .navbar .brand {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff5733, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar .login {
+            font-size: 1.2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background: #ff5733;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff784d;
+        }
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .cta {
+            margin-top: 20px;
+        }
+        .features {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 1000px;
+            animation: fadeInUp 3s ease-in-out;
+        }
+        .feature-item {
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        .feature-item::before {
+            content: '\2728';
+            margin-right: 10px;
+            color: #ff8c00;
+            font-size: 1.5rem;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="navbar">
+            <div class="brand">Learnify</div>
+            <div class="login">
+                <a href="login.html" class="btn">Login</a>
+                <a href="stafflogin.html" class="btn">Staff login</a>
+            </div>
+        </div>
+        <h1>Unlock the Future of Learning</h1>
+        <p>Engage with an immersive gamified learning experience. Achieve, compete, and excel with interactive challenges, AI-driven personalization, and peer collaboration.</p>
+        <div class="cta">
+            <a href="#features" class="btn">Explore Features</a>
+        </div>
+        <div class="features" id="features">
+            <div class="feature-item">Interactive Challenges</div>
+            <div class="feature-item">Achievements & Rewards</div>
+            <div class="feature-item">AI-Personalized Learning</div>
+            <div class="feature-item">Real-time Progress Tracking</div>
+            <div class="feature-item">Collaborative Learning Spaces</div>
+            <div class="feature-item">Gamified Leaderboards</div>
+        </div>
+    </div>
+</body>
+</html>

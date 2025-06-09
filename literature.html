@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Literature Master | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #1f3c88;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: #4a90e2;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .exam-container {
+      width: 80%;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .question {
+      font-size: 18px;
+      color: white;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .question-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .question-number {
+      font-weight: bold;
+      margin-right: 15px;
+    }
+
+    .options-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .option-btn {
+      background: #f5f5f5;
+      color: #333;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      width: 150px;
+      transition: background 0.3s;
+    }
+
+    .option-btn:hover {
+      background: #e1e1e1;
+    }
+
+    .submit-btn {
+      background: #6c6d6c;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: #7c7e7c;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #ffffff;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #ffffff;
+      color: white;
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+<body>
+
+    <a href="cources.html" class="back-btn">← Back</a>
+
+  <header>
+    <h1>Literature Master | EduQuest</h1>
+    <p>Test your Literature skills! Answer the following questions.</p>
+  </header>
+
+  <div class="exam-container">
+    <form id="exam-form">
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">1.</div>
+          <p> Who is the author of "Romeo and Juliet"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q1-a" name="q1" value="William Shakespeare"><label for="q1-a" class="option-btn">William Shakespeare</label>
+          <input type="radio" id="q1-b" name="q1" value="Charles Dickens"><label for="q1-b" class="option-btn">Charles Dickens</label>
+          <input type="radio" id="q1-c" name="q1" value="Jane Austen"><label for="q1-c" class="option-btn">Jane Austen</label>
+          <input type="radio" id="q1-d" name="q1" value="Mark Twain"><label for="q1-d" class="option-btn">Mark Twain</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">2.</div>
+          <p> What is the main theme of "To Kill a Mockingbird"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q2-a" name="q2" value="Racial Injustice"><label for="q2-a" class="option-btn">Racial Injustice</label>
+          <input type="radio" id="q2-b" name="q2" value="Love"><label for="q2-b" class="option-btn">Love</label>
+          <input type="radio" id="q2-c" name="q2" value="Revenge"><label for="q2-c" class="option-btn">Revenge</label>
+          <input type="radio" id="q2-d" name="q2" value="War"><label for="q2-d" class="option-btn">War</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">3.</div>
+          <p> Who wrote the novel "The Catcher in the Rye"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q3-a" name="q3" value="J.D. Salinger"><label for="q3-a" class="option-btn">J.D. Salinger</label>
+          <input type="radio" id="q3-b" name="q3" value="Harper Lee"><label for="q3-b" class="option-btn">Harper Lee</label>
+          <input type="radio" id="q3-c" name="q3" value="F. Scott Fitzgerald"><label for="q3-c" class="option-btn">F. Scott Fitzgerald</label>
+          <input type="radio" id="q3-d" name="q3" value="George Orwell"><label for="q3-d" class="option-btn">George Orwell</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">4.</div>
+          <p> What is the setting of the novel "1984"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q4-a" name="q4" value="Futuristic dystopian society"><label for="q4-a" class="option-btn">Futuristic dystopian society</label>
+          <input type="radio" id="q4-b" name="q4" value="Victorian England"><label for="q4-b" class="option-btn">Victorian England</label>
+          <input type="radio" id="q4-c" name="q4" value="Post-apocalyptic wasteland"><label for="q4-c" class="option-btn">Post-apocalyptic wasteland</label>
+          <input type="radio" id="q4-d" name="q4" value="Medieval Europe"><label for="q4-d" class="option-btn">Medieval Europe</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">5.</div>
+          <p> Which novel features the character "Sherlock Holmes"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q5-a" name="q5" value="The Hound of the Baskervilles"><label for="q5-a" class="option-btn">The Hound of the Baskervilles</label>
+          <input type="radio" id="q5-b" name="q5" value="Pride and Prejudice"><label for="q5-b" class="option-btn">Pride and Prejudice</label>
+          <input type="radio" id="q5-c" name="q5" value="Moby Dick"><label for="q5-c" class="option-btn">Moby Dick</label>
+          <input type="radio" id="q5-d" name="q5" value="The Great Gatsby"><label for="q5-d" class="option-btn">The Great Gatsby</label>
+        </div>
+      </div>
+
+      <!-- Additional Questions -->
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">6.</div>
+          <p> Who wrote the play "Macbeth"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q6-a" name="q6" value="William Shakespeare"><label for="q6-a" class="option-btn">William Shakespeare</label>
+          <input type="radio" id="q6-b" name="q6" value="Christopher Marlowe"><label for="q6-b" class="option-btn">Christopher Marlowe</label>
+          <input type="radio" id="q6-c" name="q6" value="Tennessee Williams"><label for="q6-c" class="option-btn">Tennessee Williams</label>
+          <input type="radio" id="q6-d" name="q6" value="Arthur Miller"><label for="q6-d" class="option-btn">Arthur Miller</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">7.</div>
+          <p> What is the primary genre of the novel "Frankenstein" by Mary Shelley?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q7-a" name="q7" value="Gothic Fiction"><label for="q7-a" class="option-btn">Gothic Fiction</label>
+          <input type="radio" id="q7-b" name="q7" value="Science Fiction"><label for="q7-b" class="option-btn">Science Fiction</label>
+          <input type="radio" id="q7-c" name="q7" value="Romance"><label for="q7-c" class="option-btn">Romance</label>
+          <input type="radio" id="q7-d" name="q7" value="Fantasy"><label for="q7-d" class="option-btn">Fantasy</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">8.</div>
+          <p> Who wrote the novel "The Odyssey"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q8-a" name="q8" value="Homer"><label for="q8-a" class="option-btn">Homer</label>
+          <input type="radio" id="q8-b" name="q8" value="Virgil"><label for="q8-b" class="option-btn">Virgil</label>
+          <input type="radio" id="q8-c" name="q8" value="Sophocles"><label for="q8-c" class="option-btn">Sophocles</label>
+          <input type="radio" id="q8-d" name="q8" value="Aeschylus"><label for="q8-d" class="option-btn">Aeschylus</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">9.</div>
+          <p> What is the setting of the novel "The Great Gatsby"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q9-a" name="q9" value="Long Island, New York"><label for="q9-a" class="option-btn">Long Island, New York</label>
+          <input type="radio" id="q9-b" name="q9" value="London, England"><label for="q9-b" class="option-btn">London, England</label>
+          <input type="radio" id="q9-c" name="q9" value="Paris, France"><label for="q9-c" class="option-btn">Paris, France</label>
+          <input type="radio" id="q9-d" name="q9" value="Los Angeles, California"><label for="q9-d" class="option-btn">Los Angeles, California</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">10.</div>
+          <p> What novel features the character "Elizabeth Bennet"?</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q10-a" name="q10" value="Pride and Prejudice"><label for="q10-a" class="option-btn">Pride and Prejudice</label>
+          <input type="radio" id="q10-b" name="q10" value="Wuthering Heights"><label for="q10-b" class="option-btn">Wuthering Heights</label>
+          <input type="radio" id="q10-c" name="q10" value="Jane Eyre"><label for="q10-c" class="option-btn">Jane Eyre</label>
+          <input type="radio" id="q10-d" name="q10" value="Sense and Sensibility"><label for="q10-d" class="option-btn">Sense and Sensibility</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Quiz</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 EduQuest. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const correctAnswers = {
+      q1: "William Shakespeare",
+      q2: "Racial Injustice",
+      q3: "J.D. Salinger",
+      q4: "Futuristic dystopian society",
+      q5: "The Hound of the Baskervilles",
+      q6: "William Shakespeare",
+      q7: "Gothic Fiction",
+      q8: "Homer",
+      q9: "Long Island, New York",
+      q10: "Pride and Prejudice"
+    };
+
+    function submitQuiz(event) {
+      event.preventDefault();
+
+      let score = 0;
+      const formElements = document.getElementById("exam-form").elements;
+
+      for (const question in correctAnswers) {
+        const selectedOption = formElements[question].value;
+        if (selectedOption === correctAnswers[question]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").innerHTML = `Your score: ${score} out of 10`;
+    }
+
+    document.getElementById("exam-form").addEventListener("submit", submitQuiz);
+  </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | Teachers | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      background: #f4f7fa;
+    }
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #2c3e50;
+      color: white;
+      padding-top: 30px;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #34495e;
+    }
+
+    .main {
+      margin-left: 220px;
+      padding: 40px;
+      width: 100%;
+    }
+
+    .main h1 {
+      font-size: 26px;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+
+    .teachers-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .teachers-table th, .teachers-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .teachers-table th {
+      background-color: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    .teachers-table tr:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>EduQuest</h2>
+    <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="student.html"><i class="fas fa-users"></i> Students</a>
+    <a href="#"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+    <a href="courcesadmin.html"><i class="fas fa-book"></i> Courses</a>
+    <a href="assingadmin.html"><i class="fas fa-tasks"></i> Assignments</a>
+    <a href="settingsadmin.html"><i class="fas fa-cog"></i> Settings</a>
+    <a href="stafflogin.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+
+  <div class="main">
+    <h1>👨‍🏫 Manage Teachers</h1>
+    <table class="teachers-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Email</th>
+          <th>Classes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mrs. Kapoor</td>
+          <td>Science</td>
+          <td>kapoor@example.com</td>
+          <td>3rd, 4th</td>
+        </tr>
+        <tr>
+          <td>Mr. Sharma</td>
+          <td>Math</td>
+          <td>sharma@example.com</td>
+          <td>2nd, 5th</td>
+        </tr>
+        <tr>
+          <td>Ms. Jackson</td>
+          <td>English</td>
+          <td>jackson@example.com</td>
+          <td>5th, 6th</td>
+        </tr>
+        <tr>
+          <td>Mr. Das</td>
+          <td>Physics</td>
+          <td>das@example.com</td>
+          <td>7th, 8th</td>
+        </tr>
+        <tr>
+          <td>Dr. Roy</td>
+          <td>Biology</td>
+          <td>roy@example.com</td>
+          <td>7th, 8th</td>
+        </tr>
+        <tr>
+          <td>Mrs. Verma</td>
+          <td>History</td>
+          <td>verma@example.com</td>
+          <td>6th</td>
+        </tr>
+        <tr>
+          <td>Mr. Mehta</td>
+          <td>Geography</td>
+          <td>mehta@example.com</td>
+          <td>5th, 6th</td>
+        </tr>
+        <tr>
+          <td>Ms. Lopez</td>
+          <td>Art</td>
+          <td>lopez@example.com</td>
+          <td>1st to 4th</td>
+        </tr>
+        <tr>
+          <td>Mr. Singh</td>
+          <td>Computer</td>
+          <td>singh@example.com</td>
+          <td>6th, 7th, 8th</td>
+        </tr>
+        <tr>
+          <td>Mrs. Nair</td>
+          <td>Music</td>
+          <td>nair@example.com</td>
+          <td>All Grades</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

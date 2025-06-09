@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Learning Adventure - Signup</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('images/3rd.png') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Dark overlay effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+            z-index: 1;
+        }
+
+        .signup-container {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            width: 400px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        h2 {
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+        }
+
+        input::placeholder, select {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: #ff9800;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: #e68a00;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') no-repeat center/cover;
+        }
+
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: white;
+        }
+
+        .login-link a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="avatar"></div>
+        <h2>Join the Fun!</h2>
+        <form>
+            <div class="input-group">
+                <input type="text" placeholder="Child's Name" required>
+            </div>
+            <div class="input-group">
+                <input type="date" required>
+            </div>
+            <div class="input-group">
+                <select required>
+                    <option value="" disabled selected>Select Age Group</option>
+                    <option value="4-6">4-6 years</option>
+                    <option value="7-9">7-9 years</option>
+                    <option value="10-12">10-12 years</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Parent/Guardian Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Parent's Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Create Password" required>
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Favorite Cartoon/Character" required>
+            </div>
+            <div class="input-group">
+                <select required>
+                    <option value="" disabled selected>Preferred Learning Style</option>
+                    <option value="visual">Visual (Pictures, Videos)</option>
+                    <option value="auditory">Auditory (Songs, Stories)</option>
+                    <option value="interactive">Interactive (Games, Activities)</option>
+                </select>
+            </div>
+            <button class="btn" type="submit">Sign Up</button>
+        </form>
+        <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+</body>
+</html>

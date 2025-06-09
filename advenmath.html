@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Math Adventures - EduQuest</title>
+  <style>
+    body {
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        margin: 0;
+    }
+
+    .top-bar {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 100;
+    }
+
+    .back-btn {
+      background-color: #1f3c88;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #4a90e2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #ccd1dd;
+    }
+
+    .game-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .game-card {
+      width: 30%;
+      background: #8d95a3;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+    }
+
+    .game-card img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .game-card h3 {
+      color: #1f3c88;
+    }
+
+    .game-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #1f3c88;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    .game-card a:hover {
+      background: #4a90e2;
+    }
+
+    .progress-bar {
+      width: 100%;
+      background: #ddd;
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+
+    .progress {
+      width: 60%;
+      height: 20px;
+      background: #ff9800;
+      text-align: center;
+      line-height: 20px;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="cources.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+  </div>
+
+  <div class="container">
+    <h2>🚀 Math Adventures</h2>
+    <p>Boost your math skills with interactive games and challenges!</p>
+
+    <div class="progress-bar">
+      <div class="progress">60% Completed</div>
+    </div>
+
+    <div class="game-section">
+      <div class="game-card">
+        <img src="images/no puzzle.png" alt="Numbers Game">
+        <h3>Number Puzzle</h3>
+        <p>Drag and match numbers to solve fun problems.</p>
+        <a href="puzzle.html">Play Now</a>
+      </div>
+
+      <div class="game-card">
+        <img src="images/quiz.png" alt="Quiz">
+        <h3>Math Quiz</h3>
+        <p>Test your knowledge with quick quizzes.</p>
+        <a href="quizmath.html">Take Quiz</a>
+      </div>
+
+      <div class="game-card">
+        <img src="images/race.jpeg" alt="Math Race">
+        <h3>Math Race</h3>
+        <p>Answer quickly to race ahead!</p>
+        <a href="racemath.html">Start Racing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: FontAwesome if you're using icons -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

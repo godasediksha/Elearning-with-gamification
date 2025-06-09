@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Science Quest | EduQuest</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #e1bee7);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #4a148c;
+    }
+
+    .question-box {
+      margin: 25px 0;
+      padding: 20px;
+      border: 2px dashed #ce93d8;
+      border-radius: 10px;
+      background-color: #f3e5f5;
+    }
+
+    .question {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .options label {
+      display: block;
+      padding: 8px;
+      margin-bottom: 6px;
+      background: #f9fbe7;
+      border-radius: 5px;
+      border: 1px solid #cddc39;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .options label:hover {
+      background-color: #dcedc8;
+    }
+
+    .submit-btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #7b1fa2;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #6a1b9a;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🔬 Science Quest</h1>
+    <form id="science-quiz">
+      <!-- Question 1 -->
+      <div class="question-box">
+        <div class="question">1. What is the closest planet to the Sun?</div>
+        <div class="options">
+          <label><input type="radio" name="q1" value="Mercury"> Mercury</label>
+          <label><input type="radio" name="q1" value="Venus"> Venus</label>
+          <label><input type="radio" name="q1" value="Earth"> Earth</label>
+          <label><input type="radio" name="q1" value="Mars"> Mars</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-box">
+        <div class="question">2. Which gas do plants absorb from the air?</div>
+        <div class="options">
+          <label><input type="radio" name="q2" value="Oxygen"> Oxygen</label>
+          <label><input type="radio" name="q2" value="Carbon Dioxide"> Carbon Dioxide</label>
+          <label><input type="radio" name="q2" value="Nitrogen"> Nitrogen</label>
+          <label><input type="radio" name="q2" value="Hydrogen"> Hydrogen</label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-box">
+        <div class="question">3. What is the process of water turning into vapor called?</div>
+        <div class="options">
+          <label><input type="radio" name="q3" value="Condensation"> Condensation</label>
+          <label><input type="radio" name="q3" value="Evaporation"> Evaporation</label>
+          <label><input type="radio" name="q3" value="Freezing"> Freezing</label>
+          <label><input type="radio" name="q3" value="Melting"> Melting</label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-box">
+        <div class="question">4. Which part of the plant makes food?</div>
+        <div class="options">
+          <label><input type="radio" name="q4" value="Root"> Root</label>
+          <label><input type="radio" name="q4" value="Stem"> Stem</label>
+          <label><input type="radio" name="q4" value="Flower"> Flower</label>
+          <label><input type="radio" name="q4" value="Leaf"> Leaf</label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question-box">
+        <div class="question">5. Which force pulls everything toward the center of the Earth?</div>
+        <div class="options">
+          <label><input type="radio" name="q5" value="Magnetism"> Magnetism</label>
+          <label><input type="radio" name="q5" value="Friction"> Friction</label>
+          <label><input type="radio" name="q5" value="Gravity"> Gravity</label>
+          <label><input type="radio" name="q5" value="Tension"> Tension</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit Answers</button>
+      <div class="result" id="quiz-result"></div>
+    </form>
+  </div>
+
+  <script>
+    const correctAnswers = {
+      q1: "Mercury",
+      q2: "Carbon Dioxide",
+      q3: "Evaporation",
+      q4: "Leaf",
+      q5: "Gravity"
+    };
+
+    document.getElementById('science-quiz').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      for (let q in correctAnswers) {
+        const answer = document.querySelector(`input[name="${q}"]:checked`);
+        if (answer && answer.value === correctAnswers[q]) {
+          score++;
+        }
+      }
+      document.getElementById('quiz-result').textContent = `🎉 You scored ${score} out of ${Object.keys(correctAnswers).length}`;
+    });
+  </script>
+</body>
+</html>

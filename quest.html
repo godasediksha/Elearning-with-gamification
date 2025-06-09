@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔬 Science Quest</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 20px;
+      padding-left: 80px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      flex-grow: 1;
+      transition: 0.3s ease;
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #4a90e2;
+        color: #000;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+        transition: background 0.3s ease;
+        z-index: 999;
+    }
+    .back-btn:hover {
+        background-color: #4a90e2;
+    }
+
+    .question {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .option-btn {
+      background: #ffe4c4;
+      padding: 15px;
+      border: 2px solid #ff9800;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 20px;
+    }
+
+    .option-btn:hover {
+      background: #ff9800;
+      color: white;
+      transform: scale(1.03);
+    }
+
+    .score {
+      margin-top: 30px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #009688;
+    }
+
+    footer {
+      color: white;
+      text-align: center;
+      padding: 16px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+    <a href="cources.html" class="back-btn">← Back</a>
+
+  <header>
+    <h1>🔬 Science Quest</h1>
+    <p>Explore the wonders of science, one question at a time!</p>
+  </header>
+
+  <div class="container">
+    <div class="question" id="question">Loading question...</div>
+    <div class="options" id="options"></div>
+    <div class="score" id="score">Score: 0</div>
+  </div>
+
+  <footer>
+    © 2025 Science Quest | Powered by Curiosity 🌟
+  </footer>
+
+  <script>
+    const questions = [
+      { q: "🌍 What planet do we live on?", options: ["Mars", "Venus", "Earth", "Jupiter"], answer: "Earth" },
+      { q: "💧 Water boils at what temperature?", options: ["50°C", "100°C", "0°C", "150°C"], answer: "100°C" },
+      { q: "🌱 What do plants need to make food?", options: ["Sunlight", "Music", "Soil", "Moonlight"], answer: "Sunlight" },
+      { q: "🧠 Which organ controls your body?", options: ["Heart", "Brain", "Lungs", "Stomach"], answer: "Brain" },
+      { q: "🌌 Which is the biggest planet?", options: ["Earth", "Mars", "Saturn", "Jupiter"], answer: "Jupiter" },
+      { q: "🧪 What is H2O commonly known as?", options: ["Salt", "Oxygen", "Water", "Helium"], answer: "Water" },
+      { q: "🔥 Which gas helps things burn?", options: ["Carbon", "Oxygen", "Hydrogen", "Nitrogen"], answer: "Oxygen" },
+      { q: "🐝 What do bees collect from flowers?", options: ["Water", "Nectar", "Dust", "Pollen"], answer: "Nectar" },
+      { q: "🌋 Lava comes out of what?", options: ["Ocean", "Crater", "Volcano", "Mountain"], answer: "Volcano" },
+      { q: "🔋 What stores energy and powers devices?", options: ["Battery", "Ball", "Bulb", "Barometer"], answer: "Battery" }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const scoreEl = document.getElementById("score");
+
+    function loadQuestion() {
+      const q = questions[current];
+      questionEl.innerText = q.q;
+      optionsEl.innerHTML = "";
+
+      q.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.innerText = option;
+        btn.onclick = () => checkAnswer(option);
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected) {
+      if (selected === questions[current].answer) {
+        score++;
+      }
+      current++;
+      scoreEl.innerText = `Score: ${score}`;
+      if (current < questions.length) {
+        loadQuestion();
+      } else {
+        questionEl.innerText = "🎉 Quiz Complete!";
+        optionsEl.innerHTML = `<p>You scored <strong>${score}</strong> out of <strong>${questions.length}</strong>! 🧠</p>`;
+      }
+    }
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>

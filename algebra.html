@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algebra Master | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #1f3c88;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: #4a90e2;
+    }
+
+    .exam-container {
+      width: 80%;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .question {
+      font-size: 18px;
+      color: white;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .question-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .question-number {
+      font-weight: bold;
+      margin-right: 15px;
+    }
+
+    .options-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .option-btn {
+      background: #f5f5f5;
+      color: #333;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      width: 150px;
+      transition: background 0.3s;
+    }
+
+    .option-btn:hover {
+      background: #e1e1e1;
+    }
+
+    .submit-btn {
+      background: #555555;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: #737573;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #ffffff;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+<body>
+
+    <a href="cources.html" class="back-btn">← Back</a>
+
+  <header>
+    <h1>Algebra Master | EduQuest</h1>
+    <p>Test your Algebra skills! Answer the following questions.</p>
+  </header>
+
+  <div class="exam-container">
+    <form id="exam-form">
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">1.</div>
+          <p> Solve for x: 3x + 5 = 20</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q1-a" name="q1" value="x = 5"><label for="q1-a" class="option-btn">x = 5</label>
+          <input type="radio" id="q1-b" name="q1" value="x = 10"><label for="q1-b" class="option-btn">x = 10</label>
+          <input type="radio" id="q1-c" name="q1" value="x = 3"><label for="q1-c" class="option-btn">x = 3</label>
+          <input type="radio" id="q1-d" name="q1" value="x = 15"><label for="q1-d" class="option-btn">x = 15</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">2.</div>
+          <p> Solve for x: 2x - 3 = 11</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q2-a" name="q2" value="x = 7"><label for="q2-a" class="option-btn">x = 7</label>
+          <input type="radio" id="q2-b" name="q2" value="x = 8"><label for="q2-b" class="option-btn">x = 8</label>
+          <input type="radio" id="q2-c" name="q2" value="x = 6"><label for="q2-c" class="option-btn">x = 6</label>
+          <input type="radio" id="q2-d" name="q2" value="x = 5"><label for="q2-d" class="option-btn">x = 5</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">3.</div>
+          <p> Solve for x: 4x + 8 = 24</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q3-a" name="q3" value="x = 2"><label for="q3-a" class="option-btn">x = 2</label>
+          <input type="radio" id="q3-b" name="q3" value="x = 4"><label for="q3-b" class="option-btn">x = 4</label>
+          <input type="radio" id="q3-c" name="q3" value="x = 3"><label for="q3-c" class="option-btn">x = 3</label>
+          <input type="radio" id="q3-d" name="q3" value="x = 5"><label for="q3-d" class="option-btn">x = 5</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">4.</div>
+          <p> Solve for x: 5x - 2 = 18</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q4-a" name="q4" value="x = 4"><label for="q4-a" class="option-btn">x = 4</label>
+          <input type="radio" id="q4-b" name="q4" value="x = 5"><label for="q4-b" class="option-btn">x = 5</label>
+          <input type="radio" id="q4-c" name="q4" value="x = 6"><label for="q4-c" class="option-btn">x = 6</label>
+          <input type="radio" id="q4-d" name="q4" value="x = 3"><label for="q4-d" class="option-btn">x = 3</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">5.</div>
+          <p> Solve for x: x/3 + 2 = 5</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q5-a" name="q5" value="x = 9"><label for="q5-a" class="option-btn">x = 9</label>
+          <input type="radio" id="q5-b" name="q5" value="x = 6"><label for="q5-b" class="option-btn">x = 6</label>
+          <input type="radio" id="q5-c" name="q5" value="x = 3"><label for="q5-c" class="option-btn">x = 3</label>
+          <input type="radio" id="q5-d" name="q5" value="x = 8"><label for="q5-d" class="option-btn">x = 8</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">6.</div>
+          <p> Solve for x: 3(x + 4) = 21</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q6-a" name="q6" value="x = 3"><label for="q6-a" class="option-btn">x = 3</label>
+          <input type="radio" id="q6-b" name="q6" value="x = 5"><label for="q6-b" class="option-btn">x = 5</label>
+          <input type="radio" id="q6-c" name="q6" value="x = 7"><label for="q6-c" class="option-btn">x = 7</label>
+          <input type="radio" id="q6-d" name="q6" value="x = 4"><label for="q6-d" class="option-btn">x = 4</label>
+        </div>
+      </div>
+
+      <!-- Added New Questions -->
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">7.</div>
+          <p> Solve for x: 6x - 4 = 14</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q7-a" name="q7" value="x = 3"><label for="q7-a" class="option-btn">x = 3</label>
+          <input type="radio" id="q7-b" name="q7" value="x = 4"><label for="q7-b" class="option-btn">x = 4</label>
+          <input type="radio" id="q7-c" name="q7" value="x = 5"><label for="q7-c" class="option-btn">x = 5</label>
+          <input type="radio" id="q7-d" name="q7" value="x = 6"><label for="q7-d" class="option-btn">x = 6</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">8.</div>
+          <p> Solve for x: 7x - 9 = 20</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q8-a" name="q8" value="x = 4"><label for="q8-a" class="option-btn">x = 4</label>
+          <input type="radio" id="q8-b" name="q8" value="x = 5"><label for="q8-b" class="option-btn">x = 5</label>
+          <input type="radio" id="q8-c" name="q8" value="x = 6"><label for="q8-c" class="option-btn">x = 6</label>
+          <input type="radio" id="q8-d" name="q8" value="x = 7"><label for="q8-d" class="option-btn">x = 7</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">9.</div>
+          <p> Solve for x: 5(x - 3) = 20</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q9-a" name="q9" value="x = 7"><label for="q9-a" class="option-btn">x = 7</label>
+          <input type="radio" id="q9-b" name="q9" value="x = 6"><label for="q9-b" class="option-btn">x = 6</label>
+          <input type="radio" id="q9-c" name="q9" value="x = 8"><label for="q9-c" class="option-btn">x = 8</label>
+          <input type="radio" id="q9-d" name="q9" value="x = 9"><label for="q9-d" class="option-btn">x = 9</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <div class="question-container">
+          <div class="question-number">10.</div>
+          <p> Solve for x: 2(x + 3) = 18</p>
+        </div>
+        <div class="options-container">
+          <input type="radio" id="q10-a" name="q10" value="x = 6"><label for="q10-a" class="option-btn">x = 6</label>
+          <input type="radio" id="q10-b" name="q10" value="x = 7"><label for="q10-b" class="option-btn">x = 7</label>
+          <input type="radio" id="q10-c" name="q10" value="x = 8"><label for="q10-c" class="option-btn">x = 8</label>
+          <input type="radio" id="q10-d" name="q10" value="x = 9"><label for="q10-d" class="option-btn">x = 9</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" onclick="submitQuiz(event)">Submit Answers</button>
+    </form>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <footer class="footer">
+    &copy; 2025 EduQuest | Algebra Master
+  </footer>
+
+  <script>
+    const correctAnswers = {
+      q1: "x = 5",
+      q2: "x = 7",
+      q3: "x = 4",
+      q4: "x = 4",
+      q5: "x = 9",
+      q6: "x = 3",
+      q7: "x = 4",
+      q8: "x = 5",
+      q9: "x = 7",
+      q10: "x = 6",
+    };
+
+    function submitQuiz(event) {
+      event.preventDefault();
+
+      let score = 0;
+      const formElements = document.getElementById("exam-form").elements;
+
+      for (const question in correctAnswers) {
+        const selectedOption = formElements[question].value;
+        if (selectedOption === correctAnswers[question]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").innerHTML = `Your score: ${score} out of 10`;
+    }
+  </script>
+
+</body>
+</html>

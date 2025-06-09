@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduQuest Leaderboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #1f3c88;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #4a90e2;
+        }
+
+        .leaderboard {
+            margin-bottom: 40px;
+        }
+
+        .leaderboard .top-students {
+            font-size: 24px;
+            color: #007bff;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .leaderboard .leaderboard-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .leaderboard .leaderboard-list li {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            background: #f9fafb;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .leaderboard .leaderboard-list li:hover {
+            background: #e7ecf3;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .leaderboard .leaderboard-list li .rank {
+            font-size: 30px;
+            font-weight: bold;
+            color: #007bff;
+            margin-right: 15px;
+        }
+
+        .leaderboard .leaderboard-list li .profile-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .leaderboard .leaderboard-list li .info {
+            flex-grow: 1;
+        }
+
+        .leaderboard .leaderboard-list li .info p {
+            margin: 5px 0;
+        }
+
+        .user-rank {
+            font-size: 20px;
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #007bff;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .user-rank:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: #e7ecf3;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            text-align: center;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="main.html" class="back-btn">← Back</a>
+
+    <div class="container">
+        <div class="heading">EduQuest Leaderboard</div>
+
+        <div class="leaderboard">
+            <div class="top-students">Top 3 Students</div>
+            <ul class="leaderboard-list">
+                <li>
+                    <span class="rank">1</span>
+                    <img src="images/p1.jpeg" alt="Leader Image" class="profile-img">
+                    <div class="info">
+                        <p><strong>Jack Farnandis</strong></p>
+                        <p>1200 Points</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank">2</span>
+                    <img src="images/p2.jpeg" alt="Leader Image" class="profile-img">
+                    <div class="info">
+                        <p><strong>Stephen willson</strong></p>
+                        <p>1100 Points</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank">3</span>
+                    <img src="images/p3.jpeg" alt="Leader Image" class="profile-img">
+                    <div class="info">
+                        <p><strong>Hardik Pandya</strong></p>
+                        <p>1000 Points</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="user-rank">
+            <p><strong>Your Rank:</strong> 96</p>
+            <p><strong>Your Points:</strong> 90</p>
+            <img src="images/p4.jpeg" alt="User Image" class="profile-img">
+        </div>
+    </div>
+</body>
+</html>

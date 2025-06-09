@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Math Puzzle | EduQuest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #1f3c88;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+        background-color: #4a90e2;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+
+    .puzzle {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: #ecf0f1;
+      border-radius: 10px;
+    }
+
+    .puzzle h3 {
+      margin: 0 0 10px;
+      color: #34495e;
+    }
+
+    .puzzle input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      width: 100%;
+      max-width: 300px;
+      font-size: 16px;
+    }
+
+    .check-btn {
+      padding: 10px 20px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .check-btn:hover {
+      background: #219150;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #2980b9;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <a href="cources.html" class="back-btn">← Back</a>
+
+  <div class="container">
+    <h1>🧠 Math Puzzle Time! (5th & 6th Grade)</h1>
+
+    <div class="puzzle">
+      <h3>🧩 Puzzle 1: What comes next?<br> 2, 4, 8, 16, ?</h3>
+      <input type="number" id="answer1" placeholder="Your Answer">
+      <button class="check-btn" onclick="checkAnswer(1, 32)">Check Answer</button>
+      <div id="result1" class="result"></div>
+    </div>
+
+    <div class="puzzle">
+      <h3>🧩 Puzzle 2: If 3 + 4 = 25, 5 + 2 = 49, then 6 + 1 = ?</h3>
+      <input type="number" id="answer2" placeholder="Your Answer">
+      <button class="check-btn" onclick="checkAnswer(2, 49)">Check Answer</button>
+      <div id="result2" class="result"></div>
+    </div>
+
+    <div class="puzzle">
+      <h3>🧩 Puzzle 3: I am a number. Multiply me by 4 and subtract 6. You get 18. What am I?</h3>
+      <input type="number" id="answer3" placeholder="Your Answer">
+      <button class="check-btn" onclick="checkAnswer(3, 6)">Check Answer</button>
+      <div id="result3" class="result"></div>
+    </div>
+
+    <div class="puzzle">
+      <h3>🧩 Puzzle 4: I am a 2-digit number. My tens digit is 3 more than my ones digit. If you reverse me, I become 36. Who am I?</h3>
+      <input type="number" id="answer4" placeholder="Your Answer">
+      <button class="check-btn" onclick="checkAnswer(4, 63)">Check Answer</button>
+      <div id="result4" class="result"></div>
+    </div>
+
+    <div class="puzzle">
+      <h3>🧩 Puzzle 5: What is the smallest number that is divisible by both 6 and 8?</h3>
+      <input type="number" id="answer5" placeholder="Your Answer">
+      <button class="check-btn" onclick="checkAnswer(5, 24)">Check Answer</button>
+      <div id="result5" class="result"></div>
+    </div>
+
+    <div class="puzzle">
+      <h3>🧩 Puzzle 6: A number is multiplied by 3 and then 12 is subtracted. The result is 21. What is the number?</h3>
+      <input type="number" id="answer6" placeholder="Your Answer">
+      <button class="check-btn" onclick="checkAnswer(6, 11)">Check Answer</button>
+      <div id="result6" class="result"></div>
+    </div>
+
+    <div class="puzzle">
+      <h3>🧩 Puzzle 7: What number am I? I am a multiple of 5, more than 20 and less than 40. I end with a 0.</h3>
+      <input type="number" id="answer7" placeholder="Your Answer">
+      <button class="check-btn" onclick="checkAnswer(7, 30)">Check Answer</button>
+      <div id="result7" class="result"></div>
+    </div>
+
+    <div class="puzzle">
+      <h3>🧩 Puzzle 8: If you add me to myself and then subtract 10, you get 30. What number am I?</h3>
+      <input type="number" id="answer8" placeholder="Your Answer">
+      <button class="check-btn" onclick="checkAnswer(8, 20)">Check Answer</button>
+      <div id="result8" class="result"></div>
+    </div>
+
+  </div>
+
+  <script>
+    function checkAnswer(puzzleNumber, correctAnswer) {
+      const userInput = document.getElementById("answer" + puzzleNumber).value;
+      const resultDiv = document.getElementById("result" + puzzleNumber);
+      if (parseInt(userInput) === correctAnswer) {
+        resultDiv.textContent = "🎉 Correct!";
+        resultDiv.style.color = "#27ae60";
+      } else {
+        resultDiv.textContent = "❌ Try again!";
+        resultDiv.style.color = "#c0392b";
+      }
+    }
+  </script>
+
+</body>
+</html>

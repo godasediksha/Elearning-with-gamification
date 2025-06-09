@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduQuest Dashboard</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+      background: url('images/4th.webp') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-bar {
+      width: 100%;
+      padding: 10px 30px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: transparent;
+    }
+
+    .profile-icon {
+      width: 45px;
+      height: 45px;
+      background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') no-repeat center/cover;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #1f3c88;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .dashboard-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 20px 60px;
+      max-width: 1400px;
+    }
+
+    .dashboard-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 30px 25px;
+      width: 260px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      background: #e3f2fd;
+    }
+
+    .dashboard-card h3 {
+      font-size: 1.4em;
+      color: #1f3c88;
+      margin-bottom: 12px;
+    }
+
+    .dashboard-card p {
+      font-size: 0.95em;
+      margin-bottom: 18px;
+      color: #444;
+    }
+
+    .dashboard-card button {
+      background: #1f3c88;
+      color: #fff;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .dashboard-card button:hover {
+      background-color: #4a90e2;
+    }
+
+    @media screen and (max-width: 768px) {
+      .dashboard-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .top-bar {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar with profile icon -->
+  <div class="top-bar">
+    <div class="profile-icon" onclick="location.href='profile.html';" title="Profile"></div>
+  </div>
+
+  <!-- Dashboard Cards -->
+  <section class="dashboard-content">
+    <div class="dashboard-card">
+      <h3>📚 My Courses</h3>
+      <p>Continue your learning journey.</p>
+      <button onclick="location.href='cources.html'">Get Started</button>
+    </div>
+    <div class="dashboard-card">
+      <h3>🏆 Leaderboard</h3>
+      <p>Check your rank among peers.</p>
+      <button onclick="location.href='leadership.html'">View</button>
+    </div>
+    <div class="dashboard-card">
+      <h3>🎖️ Achievements</h3>
+      <p>Earn badges and rewards.</p>
+      <button onclick="location.href='acheivement.html'">View</button>
+    </div>
+    <div class="dashboard-card">
+      <h3>🚀 Learning Progress</h3>
+      <p>Track your progress.</p>
+      <button onclick="location.href='progress.html'">Track</button>
+    </div>
+    <div class="dashboard-card">
+      <h3>📜 Certifications</h3>
+      <p>Get certified in completed courses.</p>
+      <button onclick="location.href='certificate.html'">View</button>
+    </div>
+    <div class="dashboard-card">
+      <h3>📝 Assignments</h3>
+      <p>Submit and review your work.</p>
+      <button onclick="location.href='assing.html'">Open</button>
+    </div>
+    <div class="dashboard-card">
+      <h3>🧾 Reports</h3>
+      <p>View detailed performance reports.</p>
+      <button onclick="location.href='reports.html'">View</button>
+    </div>
+    <div class="dashboard-card">
+      <h3>⚙️ Settings</h3>
+      <p>Manage your preferences.</p>
+      <button onclick="location.href='setting.html'">Open</button>
+    </div>
+  </section>
+
+</body>
+</html>
